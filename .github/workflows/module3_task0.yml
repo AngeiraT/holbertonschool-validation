@@ -1,6 +1,6 @@
 name: module3_task0
 on:
-    schedule:
+  schedule:
     - cron: "0 0 * * *"
   push:
 jobs:
@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cloning repository
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: running make help
-      - run: make help -C module3_task0
+        run: make help -C module3_task0
