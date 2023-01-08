@@ -1,7 +1,7 @@
 name: module3_task0
 on: [push]
 jobs:
-  check-bats-version:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Cloning repository
