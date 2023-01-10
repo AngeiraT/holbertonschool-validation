@@ -19,7 +19,7 @@
 
 ## Workflow
 
-- Unnitest
+- unnitest
 
 ## Build Workflow
 
