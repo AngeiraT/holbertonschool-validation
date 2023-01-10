@@ -1,4 +1,3 @@
----
 name: module3_task1
 
 on:
@@ -29,5 +28,3 @@ jobs:
 
       - name: Build command
         run: sudo make build -C module3_task1
-...
-      
