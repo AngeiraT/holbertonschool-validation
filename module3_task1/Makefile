@@ -11,3 +11,5 @@ clean: ## Removes content from dist directory
 .SILENT:
 help: ## Displays helpful information for Makefile commands
 	cat Makefile | grep '##' | tr -d '##'
+
+YAML: ##syntax to define the workflow.
