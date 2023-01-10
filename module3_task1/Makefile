@@ -12,4 +12,11 @@ clean: ## Removes content from dist directory
 help: ## Displays helpful information for Makefile commands
 	cat Makefile | grep '##' | tr -d '##'
 
-YAML: ##syntax to define the workflow.
+lint: ## lint
+	shellcheck setup.sh
+
+unittest: ## testing
+	pwd
+
+integration-test: ## tests
+	ls
