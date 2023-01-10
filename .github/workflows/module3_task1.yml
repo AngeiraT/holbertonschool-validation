@@ -1,13 +1,15 @@
+---
 name: module3_task1
+
 on:
   schedule:
     - cron: "0 0 * * *"
   push:
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
-      - name: Cloning repository
+      - name: Clone repository
         uses: actions/checkout@v3
 
       - name: lint
@@ -21,10 +23,11 @@ jobs:
 
       - name: test2
         run: sudo make integration-test -C module3_task1
-      
+
       - name: help
         run: sudo make help -C module3_task1
 
       - name: Build command
         run: sudo make build -C module3_task1
+...
       
