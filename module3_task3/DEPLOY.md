@@ -1,13 +1,17 @@
-# Deployment
+# Deployment Document
 
-## What is in the archive and how to unarchive it?
+- What is in the archive and how to unarchive it?
 
-- [check link](https://www.how2shout.com/linux/linux-zip-commands-to-archive-or-unarchive-files/)
+- It is a compressed file that is the awesome-api binary and is 'dist directory'.
+  
+- What are the commands to start and stop the application?
 
-## What are the commands to start and stop the application?
+  - Use Hugo server, sintax type hugo server
 
-## How to customize where the application logs are written?
+- How to customize where the application logs are written?
 
-## How to “quickly” verify that the application is running (healthcheck)?
-- zip
-- tag
+- I do not know yet
+
+- How to “quickly” verify that the application is running (healthcheck)?
+
+- Check it out on local host [http://localhost:1313]
