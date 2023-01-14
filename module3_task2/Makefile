@@ -16,7 +16,7 @@ unit-tests: ## testing various commands
 	make package
 	make clean
 
-integration-test: ## Stats server and checks local host URL
+integration-tests: ## Stats server and checks local host URL
 	hugo
 	ls dist/
 	
