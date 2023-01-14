@@ -1,38 +1,45 @@
 name: module3_task2
-
 on:
-  schedule:
-    - cron: "0 0 * * *"
   push:
     branches:
-      - "master"
+      - main
+      - master
+  schedule:
+    - cron: "0 0 * * *"
+
 jobs:
-  build:
+  module3_task2:
     runs-on: ubuntu-18.04
     steps:
-      - name: Clone repository
+      - name: Clone the repository
         uses: actions/checkout@v3
 
-      - name: lint
-        run: sudo make lint -C module3_task2
+      - name: Run script to setup Hugo
+        run: |
+          cd module3_task2/
+          ./setup.sh
+        shell: bash
 
-      - name: Install required tools
-        run: cd module3_task2 && sudo ./setup.sh
-
-      - name: test
-        run: sudo make unittest -C module3_task2
-
-      - name: test2
-        run: sudo make integration-test -C module3_task2
-
-      - name: help
-        run: sudo make help -C module3_task2
-
-      - name: validate
-        run: sudo make validate -C module3_task2
-
-      - name: Build command
-        run: sudo make build -C module3_task2
-
-      - name: Package
-        run: sudo make package -C module3_task2
+      - name: Build and create package
+        run: |
+          cd module3_task2/
+          make lint
+      - name: Build and create package
+        run: |
+          cd module3_task2/
+          make package
+      - name: Run tests
+        run: |
+          cd module3_task2/
+          make build
+          make validate
+          make integration-tests
+          make unittests
+          make package
+          make clean
+      - name: Archive build
+        if: ${{ success()}}
+        uses: actions/upload-artifact@v3
+        with:
+          name: upload-package
+          path: module3_task2/awesome-website.zip
