@@ -8,12 +8,9 @@ post: ## Creates a new post using env vars POST_TITLE and POST_NAME
 clean: ## Removes content from dist directory
 	rm -rf dist/*
 
-.SILENT:
-help: ## Displays helpful information for Makefile commands
-	cat Makefile | grep '##' | tr -d '##'
-
-lint: ## lint markdown files 
-	markdownlint README.md DEPLOY.md
+package: ## creating a zip line containing binary and the dist/ directory
+	make build
+	zip awesome-website.zip dist/index.html
 
 unit-tests: ## testing various commands
 	make package
@@ -26,6 +23,9 @@ integration-test: ## Stats server and checks local host URL
 validate: ## Checks current working directory
 	pwd
 
-package: ## creating a zip line containing binary and the dist/ directory
-	make build
-	zip awesome-website.zip dist/index.html
+lint: ## lint markdown files 
+	markdownlint README.md DEPLOY.md
+
+.SILENT:
+help: ## Displays helpful information for Makefile commands
+	cat Makefile | grep '##' | tr -d '##'
