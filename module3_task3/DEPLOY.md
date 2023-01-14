@@ -1,13 +1,24 @@
-# Deployment
+# DEPLOYMENT
 
-## What is in the archive and how to unarchive it?
+## Contents
 
-- [check link](https://www.how2shout.com/linux/linux-zip-commands-to-archive-or-unarchive-files/)
+The archive contains the latest build and the api binary.
 
-## What are the commands to start and stop the application?
+## Extraction Process
 
-## How to customize where the application logs are written?
+Run the command:
+`unzip awesome-website.zip`
 
-## How to “quickly” verify that the application is running (healthcheck)?
-- zip
-- tag
+## Operation
+
+To run the application use:
+`hugo server`
+
+## How to customise where logs are written
+
+Changing the location of log files is not currently functional
+
+## How to check if the application is running
+
+Use the url in modern browser: <http://localhost:1313>
+
