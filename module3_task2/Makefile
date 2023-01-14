@@ -15,7 +15,7 @@ help: ## Displays helpful information for Makefile commands
 lint: ## lint markdown files 
 	markdownlint README.md DEPLOY.md
 
-unittest: ## testing various commands
+unit-tests: ## testing various commands
 	make package
 	make clean
 
