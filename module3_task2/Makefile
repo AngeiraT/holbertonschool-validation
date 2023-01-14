@@ -12,17 +12,20 @@ clean: ## Removes content from dist directory
 help: ## Displays helpful information for Makefile commands
 	cat Makefile | grep '##' | tr -d '##'
 
-lint: ## lint
+lint: ## lint markdown files 
 	markdownlint README.md DEPLOY.md
 
-unittest: ## testing
+unittest: ## testing various commands
+	make package
+	make clean
+
+integration-test: ## Stats server and checks local host URL
+	hugo
+	ls dist/
+	
+validate: ## Checks current working directory
 	pwd
 
-integration-test: ## tests
-	ls
-	
-validate: ## validaion
-	ls -l
-
-package: ## creating package
-	zip awesome-website.zip dist/
+package: ## creating a zip line containing binary and the dist/ directory
+	make build
+	zip awesome-website.zip dist/index.html
