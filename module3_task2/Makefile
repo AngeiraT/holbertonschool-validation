@@ -1,3 +1,6 @@
+# Define variables
+SHELLCHECK=shellcheck
+
 build: ## Builds a website using hugo with current config in config.toml
 	hugo
 
@@ -10,9 +13,10 @@ clean: ## Removes content from dist directory
 
 package: ## creating a zip line containing binary and the dist/ directory
 	make build
-	zip awesome-website.zip dist/index.html
+	zip awesome-website.zip dist/
 
 unit-tests: ## testing various commands
+	make POST_TITLE='TEST' POST_NAME='this-is-a-test' post
 	make package
 	make clean
 
@@ -23,8 +27,13 @@ integration-tests: ## Stats server and checks local host URL
 validate: ## Checks current working directory
 	pwd
 
-lint: ## lint markdown files 
-	markdownlint README.md DEPLOY.md
+lint: ## shellcheck setup
+	markdownlint DEPLOY.md
+	$(SHELLCHECK) setup.sh >/dev/null 2>&1 || echo "Lint Failed"
+
+markdownlint: ## updated to lint the files README.md and DEPLOY.md
+	markdownlint README.md
+	markdownlint DEPLOY.md
 
 .SILENT:
 help: ## Displays helpful information for Makefile commands
