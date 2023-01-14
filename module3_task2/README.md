@@ -16,10 +16,10 @@
 - package
 - validate
 - integration-tests
-
+- lint
 ## Workflow
 
-- Unnitest
+- help
 
 ## Build Workflow
 
