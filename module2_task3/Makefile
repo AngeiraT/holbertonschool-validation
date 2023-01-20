@@ -37,4 +37,3 @@ unit-tests: ##execute (successfully) the Golang unit tests
 
 integration-tests: ##  execute (successfully) the Golang integration tests
 	go test -v -coverprofile=coverage-integrations.out
-
