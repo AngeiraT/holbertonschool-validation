@@ -1,5 +1,6 @@
 build: ## Compile the source code of the application to a binary name file using tje command go build
 	hugo
+	make lint
 	go build 
 
 post: ## Creates a new post using env vars POST_TITLE and POST_NAME
@@ -7,9 +8,10 @@ post: ## Creates a new post using env vars POST_TITLE and POST_NAME
 	sed -i 's/title: .*/title: "$(POST_TITLE)"/' content/posts/$(POST_NAME).md
 
 clean: ##  Delete the binary awesome-api and the log file awesome-api.log
+	-make stop
 	pkill awesome-api
 	rm -rf ./dist/*
-	rm -f ./awesome-api ./awesome.log
+	rm ./awesome-api ./awesome.log
 
 .SILENT:
 help: ## Displays helpful information for Makefile commands
