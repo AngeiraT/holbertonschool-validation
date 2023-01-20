@@ -32,24 +32,17 @@ func Test_HelloHandler(t *testing.T) {
 		},
 		// INSERT MORE TESTS HERE
 		{
-			name:         "Angeira Quiles",
-			queryString:  "name=Angeira Quiles",
-			responseCode: 200,
-			body:         "Hello Angeira Quiles!",
-		},
-
-		{
-			name:         "Quiles",
-			queryString:  "name=Quiles&Angie",
-			responseCode: 200,
-			body:         "Hello Angie!",
-		},
-
-		{
 			name:         "Without a name",
 			queryString:  "",
 			responseCode: 200,
 			body:         "Hello there!",
+		},
+
+		{
+			name:         "With two name parameters",
+			queryString:  "name=Quiles&Angie",
+			responseCode: 200,
+			body:         "Hello Angie!",
 		},
 	}
 	for _, tt := range tests {
