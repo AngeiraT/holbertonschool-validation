@@ -2,12 +2,12 @@ mode: set
 github.comAngeiraT/awesome-api/main.go:13.13,15.43 2 0
 github.comAngeiraT/awesome-api/main.go:18.2,21.57 2 0
 github.comAngeiraT/awesome-api/main.go:15.43,17.3 1 0
-github.comAngeiraT/awesome-api/main.go:24.32,35.2 4 0
-github.comAngeiraT/awesome-api/main.go:37.65,45.2 2 0
+github.comAngeiraT/awesome-api/main.go:24.32,35.2 4 1
+github.comAngeiraT/awesome-api/main.go:37.65,45.2 2 1
 github.comAngeiraT/awesome-api/main.go:47.59,55.25 4 1
 github.comAngeiraT/awesome-api/main.go:68.2,68.16 1 1
 github.comAngeiraT/awesome-api/main.go:73.2,76.56 2 1
-github.comAngeiraT/awesome-api/main.go:56.9,58.12 1 0
+github.comAngeiraT/awesome-api/main.go:56.9,58.12 1 1
 github.comAngeiraT/awesome-api/main.go:59.9,61.23 1 1
-github.comAngeiraT/awesome-api/main.go:62.10,64.39 1 0
+github.comAngeiraT/awesome-api/main.go:62.10,64.39 1 1
 github.comAngeiraT/awesome-api/main.go:68.16,70.3 1 1
