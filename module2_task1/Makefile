@@ -24,3 +24,6 @@ stop: ## Stop the application with the command kill
 test: ## You want to test it to ensure that it behaves as expected.
 	curl http://localhost:9999
 	curl http://localhost:9999/health
+
+lint: ## the linter reads the source code and detect common semantic errors.
+	golangci-lint run ./main.go
