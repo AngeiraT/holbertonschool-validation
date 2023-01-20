@@ -13,7 +13,7 @@ clean: ##  Delete the binary awesome-api and the log file awesome-api.log
 	make stop
 	pkill awesome-api
 	rm -rf ./dist/*
-	rm -f ./awesome-api ./awesome.log coverage*
+	-rm ./awesome-api ./awesome.log coverage*
 
 .SILENT:
 help: ## Displays helpful information for Makefile commands
