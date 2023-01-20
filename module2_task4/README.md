@@ -16,3 +16,4 @@
 - help: prints out the list of commands in makefile and their usage.
 - unit-tests: The goal unit-tests should be implemented and should execute (successfully) the Golang unit tests.
 - integration-tests: should be implemented and should execute (successfully) the Golang integration tests.
+- check: Lints and check for dead links on markdowns using markdownlint-cli and markdown-link-check.
