@@ -9,7 +9,8 @@ post: ## Creates a new post using env vars POST_TITLE and POST_NAME
 clean: ##  Delete the binary awesome-api and the log file awesome-api.log
 	pkill awesome-api
 	rm -rf ./dist/*
-	rm  -f ./awesome-api ./awesome.log
+	rm -f ./awesome-api ./awesome.log
+	rm -f ./coverage-integrations.out ./coverage-units.out
 
 .SILENT:
 help: ## Displays helpful information for Makefile commands
@@ -22,11 +23,16 @@ stop: ## Stop the application with the command kill
 	pkill awesome-api
 
 test: ## You want to test it to ensure that it behaves as expected.
-	curl http://localhost:9999
-	curl http://localhost:9999/health
+	go test -v -short -coverprofile=coverage-units.out
+	go test -v -short -coverprofile=coverage-integrations.out
+
 
 lint: ## the linter reads the source code and detect common semantic errors.
 	golangci-lint run ./main.go
 
 unit-tests: ##execute (successfully) the Golang unit tests
 	go test -v -short -coverprofile=coverage-units.out
+
+integration-tests: ##  execute (successfully) the Golang integration tests
+	go test -v -short -coverprofile=coverage-integrations.out
+
