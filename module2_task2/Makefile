@@ -27,3 +27,6 @@ test: ## You want to test it to ensure that it behaves as expected.
 
 lint: ## the linter reads the source code and detect common semantic errors.
 	golangci-lint run ./main.go
+
+unit-tests: ##execute (successfully) the Golang unit tests
+	go test -v -short -coverprofile=coverage-units.out
