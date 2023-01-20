@@ -1,7 +1,7 @@
 build:## Compile the source code of the application to a binary name file using tje command go build
 	lint
 	hugo
-	go build -o awesomw	-api ./*.go
+	go build -o awesome-api ./*.go
 
 post: ## Creates a new post using env vars POST_TITLE and POST_NAME
 	hugo new posts/$(POST_NAME).md
