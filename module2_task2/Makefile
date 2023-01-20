@@ -9,7 +9,7 @@ post: ## Creates a new post using env vars POST_TITLE and POST_NAME
 clean: ##  Delete the binary awesome-api and the log file awesome-api.log
 	pkill awesome-api
 	rm -rf ./dist/*
-	rm  -f ./awesome-api ./awesome.log
+	rm -f ./awesome-api ./awesome.log
 
 .SILENT:
 help: ## Displays helpful information for Makefile commands
