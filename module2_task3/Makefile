@@ -1,8 +1,5 @@
 # Implement the next steps for the actual Go-Hugo website's source code
 
-lint: ## the linter reads the source code and detect common semantic errors.
-	golangci-lint run ./main.go
-
 build: ## Compile the source code of the application to a binary name file using tje command go build
 	hugo
 	make lint
@@ -32,9 +29,12 @@ test: ## You want to test it to ensure that it behaves as expected.
 	make unit-tests
 	make integration-tests
 
+lint: ## the linter reads the source code and detect common semantic errors.
+	golangci-lint run ./main.go
+
 unit-tests: ##execute (successfully) the Golang unit tests
 	go test -v -short -coverprofile=coverage-units.out
 
 integration-tests: ##  execute (successfully) the Golang integration tests
-	go test -v -short -coverprofile=coverage-integrations.out
+	go test -v -coverprofile=coverage-integrations.out
 
