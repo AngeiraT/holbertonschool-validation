@@ -15,9 +15,7 @@ clean: ##  Delete the binary awesome-api and the log file awesome-api.log
 
 .SILENT:
 help: ## Displays helpful information for Makefile commands
-	echo "Usage: make <command>"
-	echo "-----"	
-	cat Makefile | grep '##' | tr -d '##'
+	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
  
 run: ## Run the application in background by executing the binary awesome-api, and write logs
 	./awesome-api >./awesome.log 2>&1 &
