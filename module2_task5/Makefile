@@ -1,7 +1,15 @@
 # Implement the next steps for the actual Go-Hugo website's source code
+go-build:	## Builds the API binary file using go
+	go mod init github.com/Apinedas/awesome-api
+	go get github.com/gorilla/mux
+	go build
 
-build: check ##  Builds a website using gohugo on the dist folder ,if build fails ,check
-		hugo
+hugo-build: check		## Builds a website using gohugo on the dist folder
+	hugo
+
+build:	## Builds all that is needed for website
+	make go-build
+	make hugo-build
 
 post: ## Creates a new post using env vars POST_TITLE and POST_NAME
 	hugo new posts/$(POST_NAME).md
