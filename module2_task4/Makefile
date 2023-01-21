@@ -37,3 +37,13 @@ unit-tests: ##execute (successfully) the Golang unit tests
 
 integration-tests: ##  execute (successfully) the Golang integration tests
 	go test -v -coverprofile=coverage-integrations.out
+
+check:  ## Lints and check for dead links on markdowns using markdownlint-cli and markdown-link-check
+	markdownlint ./content/posts/*.md
+	markdown-link-check ./content/posts/*.md
+
+validate: ## Validates dist/index.html using W3C Hbtn validator
+	make build
+	-git clone https://github.com/holbertonschool/W3C-Validator.git
+	-./W3C-Validator/w3c_validator.py ./dist/index.html
+	-rm -rf ./W3C-Validator
