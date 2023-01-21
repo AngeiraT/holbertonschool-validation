@@ -1,6 +1,7 @@
 # Implement the next steps for the actual Go-Hugo website's source code
 
-build: ## Compile the source code of the application to a binary name file using tje command go build
+build: ##  Builds a website using gohugo on the dist folder ,if build fails ,check
+	check
 	hugo
 	make lint
 	go build
