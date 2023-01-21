@@ -2,8 +2,6 @@
 
 build: check ##  Builds a website using gohugo on the dist folder ,if build fails ,check
 		hugo
-		make lint
-		go build
 
 post: ## Creates a new post using env vars POST_TITLE and POST_NAME
 	hugo new posts/$(POST_NAME).md
