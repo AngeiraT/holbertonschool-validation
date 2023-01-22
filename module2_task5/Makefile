@@ -5,7 +5,7 @@ go-build:	## Builds the API binary file using go
 	go build
 
 hugo-build: check		## Builds a website using gohugo on the dist folder
-	hugo
+	hugo --destination ./dist
 
 build:	## Builds all that is needed for website
 	make go-build
@@ -17,7 +17,7 @@ post: ## Creates a new post using env vars POST_TITLE and POST_NAME
 
 clean: ##  Delete the binary awesome-api and the log file awesome-api.log
 	-make stop
-	-rm ./awesome-api awesome.log coverage*
+	-rm ./awesome-api awesome.log coverage* go* ./dist
 
 .SILENT:
 help: ## Displays helpful information for Makefile commands
@@ -32,6 +32,7 @@ stop: ## Stop the application with the command kill
 	pkill awesome-api
 
 test: ## You want to test it to ensure that it behaves as expected.
+	-make build
 	make unit-tests
 	make integration-tests
 
