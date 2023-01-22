@@ -1,14 +1,14 @@
 # Implement the next steps for the actual Go-Hugo website's source code
 
 build: check ##  Builds a website using gohugo on the dist folder ,if build fails ,check
-		hugo
+		hugo --destination ./dist
 
 post: ## Creates a new post using env vars POST_TITLE and POST_NAME
 	hugo new posts/$(POST_NAME).md
 	sed -i 's/title: .*/title: "$(POST_TITLE)"/' content/posts/$(POST_NAME).md
 
 clean: ##  Delete the binary awesome-api and the log file awesome-api.log
-	rm -rf dist
+	rm -Rf dist
 
 .SILENT:
 help: ## Displays helpful information for Makefile commands
